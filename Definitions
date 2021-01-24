@@ -1,0 +1,203 @@
+Interview Prep Definition Lab
+1.	Abstraction
+Abstraction is the process of showing only the important thing to the user and hiding the internal details.
+Example:
+To withdraw money from an ATM machine as user I do not necessarily need to know every detail of how the withdrawing of money works. I only need my pin number to input it when prompted by the machine. Every non-essential details are hidden from the user to protect unauthorized access.
+
+class BankCustomer {
+		Int acc_no;
+		Float balance_amt;
+		Int pin_num;
+		String fullName;
+		Int age;
+		String address;
+void withdraw_Money() {
+
+}
+}
+/*to withdraw money only pin_num is required. This means the remaining properties are hidden for withdraw_Money method.
+
+2.	Encapsulation
+Is mechanism of wrapping or binding data(variables) with methods as a single unit. This means the variables of encapsulated class are hidden from other classes and can be accessed only through the methods of their current class.
+Example:
+Again we will use the bankAccount example we used for abstraction.
+class BankCustomer {
+		private int acc_no;
+		private float balance_amt;
+		private int pin_num;
+		private String fullName;
+		private int age;
+		private String address;
+void withdraw_Money() {
+
+}
+}
+
+3.	Throw Exception
+Explicitly throw an exception within the method
+4.	Throws Exception
+Declares an exception in the method signature.
+5.	Polymorphism
+Same name different form. A person at the same time can have different characteristics.
+A man
+Is a Father to his children
+Is a husband to his wife
+Is a brother to his siblings
+Is an employee to his employers
+
+Two types of polymorphism:
+
+Static  polymorphism Compile time polymorphism
+Runtime polymorphism handled in the compiler
+
+6.	Method Overloading
+When we have multiple function or methods with the same name but different parameters. Therefore, a method can be overloaded in two ways:
+
+Change the number of arguments
+class MultiplyFun {
+
+    // Method with 2 parameter
+    static int Multiply(int a, int b){
+        return a * b;
+    }
+
+    // Method with the same name but 3 parameter
+
+static double Multiply(int a, int b, int c){
+        return a * b *c;
+    }
+}
+Change the type of argument
+class MultiplyFun {
+    // Method with 2 parameter
+    static int Multiply(int a, int b){
+        return a * b;
+    }
+    // Method with the same name but 2 double parameter
+    static double Multiply(double a, double b){
+        return a * b;
+    }
+}
+7.	Method Overriding
+Method overriding on the other hand, occurs when a derived class(sub class) has a definition for one of the member functions of the base class(super class).
+Animal(parent class)
+Data1
+Move()
+Eat()
+Dog(sub class)
+
+Data2
+Move()
+Bark()
+
+Dog class extends from 	Animal class, so the members in animal class can be inherited by Dog class or can do a specific implementation of a method from parent class.
+•	Move() is overridden method.
+•	Eat() is inherited method from Animal(parent class) by Dog class.
+
+8.	Inheritance
+A mechanism by which one class allow to inherit the fields and methods of another class.
+We have : super class and sub class. Example is demonstrated in the above example.
+9.	SOLID
+•	Single Responsibility – A class has only a single responsibility
+•	Open/close principle – classes are open for extension but closed for modification or alteration
+•	Liscove’s Substitution principle – Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program
+•	Interface Segregation Principle – many client specific interface is better than one general purpose interface.
+•	Dependency Inversion – don’t extend ArrayList class to get those functions; implement list interface instead.
+10.	Difference between Abstract class and Interface
+     Abstract Class	                                                                                Interface
+1	 An abstract class can extend only one class or one abstract class at a time                An interface can extend any number of interfaces at a time
+2	 An abstract class can extend another concrete (regular) class or abstract class            An interface can only extend another interface
+3	 An abstract class can have both abstract and concrete methods	                            An interface can have only abstract methods
+4	 In abstract class keyword “abstract” is mandatory to declare a method as an abstract	    In an interface keyword “abstract” is optional to declare a method as an abstract
+5	 An abstract class can have protected and public abstract methods	                        An interface can have only have public abstract methods
+6	 An abstract class can have static, final or static final variable with any access          interface can only have public static final (constant) variable
+     specifier
+
+
+11.	Collection and Collections
+    Collection is an interface - is base interface for list set and queue
+    Collections is a class - is utility class
+    They both belong to java.util package.
+    Collection                                                                                  Collections
+    1. It is an interface                                                                       it is utility class
+    2. It is used to represent a group of individual objects as a single unit                   it defines several utility methods that are used to operate on collection.
+    3. The collection is an interface that contains a static method since Java8                 it contains only static methods
+
+12.	Array Store Exception
+      ArrayStoreException occurs whenever an attempt is made to store wrong type of object inti an array of objects.
+
+13.	Checked and Unchecked Exception
+      The main difference between the checked and unchecked exception:
+      Checked exceptions are in knowledge of compiler whereas, unchecked exceptions are not in knowledge of compiler.
+      Example of unchecked exceptions IndexOutOfBoundException
+
+14.	JVM,JDK, and JRE
+    JVM - Java Virtual Machine is the main component of Java architect and it is the part of Java Runtime Environment(JRE).
+    JDK - Java Development Kit for building applications, applets, and components using the java programming language.
+    JRE - Java Runtime Environment it provides the libraries, the JVM, and other components to run applets and applications written in Java programming language.
+
+
+15.	HashMap and HashMap unsorted
+    HashMap gives you an unsorted or unordered Map. We only use HasMap if we don't care about the order of our data.
+    HashMap makes no guarantee about the iteration order of data. If we need sorted and ordered Map we use TreeMap.
+
+16.	Difference between Final, Finally, Finalize (source JavaTpoint)
+- Final is used to apply restrictions on class, method and variable. Final class can't be inherited,
+final method can't be overridden and final variable value can't be changed.
+- Finally is used to place important code, it will be executed whether exception is handled or not.
+- Finalize is used to perform clean up processing just before object is garbage collected.
+
+17.	Dictionary in java
+A java dictionary is an abstract class that stores key-value pairs.
+Given a key, its corresponding value can be stored and retrieved as needed.
+
+18.	Which collection is the fastest
+This depends on what you want to do:
+If we are looking for fast access to elements using index, ArrayList is the best.
+If we are looking for fast access to value using a key then we should use a HashMap.
+If we need to add or remove elements then LinkedList is fastest.
+
+19.	What is variable instance?
+
+
+20.	What is finalize method?
+
+
+21.	What is access modifier?
+There are 4 access modifiers in java namely, default, public, private, protected.
+These access modifiers restricts the scope of a class, a constructor, a variable, or a method.
+Default: can only be accessed within class and within package.
+Public can be accessed within class, within package,in child class, and outside package.
+Private: can only be accessed within class.
+Protected:can be accessed within class, within package, by child class outside package.
+
+22.	What is API?
+API is an acronym for Application Programming Interface. An application programming interface
+is a computing interface that defines interactions between multiple software intermediaries
+that allows two applications to talk to each other. It defines the kinds of calls or requests
+that can be made, how to make them, the data formats that should be used, the conventions to follow.
+
+23.	What is autoboxing?
+
+
+24.	What is a class variable?
+
+
+25.	What does DOM stands for?
+
+
+26.	What is an enumerated type?
+
+
+27.	Explain garbage collection
+
+
+28.	Explain what a generic is and why we use them
+
+
+29.	Explain type erasure
+
+
+
+30.	Explain JAR (Java archive)
+
